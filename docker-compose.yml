@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    image: mongo-app
+    build: .
+    ports:
+      - '3002:3002'
+    networks:
+      - api-server
+    depends_on:
+      - 'mongo'
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    networks:
+      - api-server
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  api-server:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
