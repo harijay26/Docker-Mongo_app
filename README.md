@@ -1,4 +1,4 @@
-# Dockerize a Node.js app connected to MongoDb.
+# Dockerized Node.js app connected to MongoDb.
 
 - Run: "docker build -t mongo-app ."
 - Then Run: "docker-compose up"
